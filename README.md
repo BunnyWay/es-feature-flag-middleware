@@ -1,4 +1,4 @@
-# Template: es-user-agent-middleware
+# Template: es-feature-flag-middleware
 
 This templates demonstrates a basic middleware for Bunny using a local `Deno`.
 
