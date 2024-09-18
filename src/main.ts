@@ -13,7 +13,7 @@ BunnySDK.net.http.servePullZone({ url: "https://echo.free.beeceptor.com/" })
       const path = new URL(ctx.request.url).pathname;
       if (path === "/d") {
         if (!featureFlags.includes("route-d-preview")) {
-          return new Response("You cannot use this route.", { status: 400 });
+          return Promise.resolve(new Response("You cannot use this route.", { status: 400 }));
         }
       }
 
