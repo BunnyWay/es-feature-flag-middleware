@@ -5,7 +5,7 @@ console.log("Starting server...");
 
 BunnySDK.net.http.servePullZone({ url: "https://echo.free.beeceptor.com/" })
   .onOriginRequest(
-    async (ctx) => {
+    (ctx) => {
       const optFT = ctx.request.headers.get("feature-flags");
       const featureFlags = optFT ? optFT.split(",").map((v) => v.trimStart()) : [];
 
@@ -18,6 +18,6 @@ BunnySDK.net.http.servePullZone({ url: "https://echo.free.beeceptor.com/" })
         }
       }
 
-      return ctx.request;
+      return Promise.resolve(ctx.request);
     },
   );
